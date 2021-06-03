@@ -1,5 +1,8 @@
 # AI-deck-workshop
 
+<img style="float: right;" src="imgs/overview.png" width="100%">
+
+
 ## 1. Basic programming
 
 Hanna: please describe here this hands-on session
