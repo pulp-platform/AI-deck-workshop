@@ -4,7 +4,7 @@ APP=1
 APP_STACKSIZE=300
 
 VPATH += src/
-PROJ_OBJ += app_dronet.o
+PROJ_OBJ += main.o
 PROJ_OBJ += uart_dma_pulp.o
 INCLUDES += -Iinc
 

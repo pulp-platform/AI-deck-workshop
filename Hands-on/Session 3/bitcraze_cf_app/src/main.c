@@ -15,52 +15,53 @@
  See the License for the specific language governing permissions and           
  limitations under the License.                                                
                                                                                
- File:    uart_send_counter.c   
+ File:    main.c   
  Author:  Vlad Niculescu      <vladn@iis.ee.ethz.ch>                           
  Date:    15.03.2021                                                           
 -------------------------------------------------------------------------------*/
 
-/* PMSIS includes */
-#include "pmsis.h"
+#include <string.h>
+#include <stdint.h>
+#include <stdbool.h>
 
-/* Variables used. */
-uint8_t to_send;
+#include "app.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "debug.h"
+#include "uart_dma_setup.h"
+#include "log.h"
 
-void test_uart_helloworld(void)
+#define DEBUG_MODULE "HELLOWORLD"
+#define BUFFERSIZE 1
+
+uint8_t aideckRxBuffer[BUFFERSIZE];
+volatile uint8_t dma_flag = 0;
+uint8_t log_counter=0;
+
+void appMain()
 {
-    printf("Entering main controller\n");
+	DEBUG_PRINT("Application started! \n");
+	USART_DMA_Start(115200, aideckRxBuffer, BUFFERSIZE);
 
-    uint32_t errors = 0;
-    struct pi_device uart;
-    struct pi_uart_conf conf;
-
-    /* Init & open uart. */
-    pi_uart_conf_init(&conf);
-    conf.enable_tx = 1;
-    conf.enable_rx = 0;
-    conf.baudrate_bps = 115200;
-    pi_open_from_conf(&uart, &conf);
-    if (pi_uart_open(&uart))
-    {
-        printf("Uart open failed !\n");
-        pmsis_exit(-1);
-    }
-
-    for (uint8_t i=0; i<100; i++)
-    {
-        to_send = i;
-        pi_uart_write(&uart, &to_send, 1);
-        pi_time_wait_us(500000);
-    }
-
-    pi_uart_close(&uart);
-
-    pmsis_exit(errors);
+	while(1) {
+		vTaskDelay(M2T(100));
+		if (dma_flag == 1)
+		{
+			dma_flag = 0;  // clear the flag
+			DEBUG_PRINT("Counter: %d\n", aideckRxBuffer[0]);
+			log_counter = aideckRxBuffer[0];
+			memset(aideckRxBuffer, 0, BUFFERSIZE);  // clear the dma buffer
+		}
+	}
 }
 
-/* Program Entry. */
-int main(void)
+
+void __attribute__((used)) DMA1_Stream1_IRQHandler(void)
 {
-    printf("\n\n\t *** PMSIS Uart HelloWorld ***\n\n");
-    return pmsis_kickoff((void *) test_uart_helloworld);
+ DMA_ClearFlag(DMA1_Stream1, UART3_RX_DMA_ALL_FLAGS);
+ dma_flag = 1;
 }
+
+LOG_GROUP_START(log_test)
+LOG_ADD(LOG_UINT8, test_variable_x, &log_counter)
+LOG_GROUP_STOP(log_test)
