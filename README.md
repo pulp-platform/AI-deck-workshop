@@ -41,15 +41,19 @@ The code consists of two pars:
 Tested on GAP_SDK version 3.8.1.
 
 Commands:
-```
 Flash GAP8 memory with our code:
+```
 make clean all
 make image flash io=host
-
-Run code on GAP8 from L2 memory (volatile)
+```
+Alternatively, you can run code on GAP8 from L2 memory (volatile)
+```
 make clean all run io=host
+```
 
-visualize images: python visualizer.py
+Visualize images:
+```
+python visualizer.py
 ```
 
 
