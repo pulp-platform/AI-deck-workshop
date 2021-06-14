@@ -34,7 +34,7 @@ Whenever the counter value is received from GAP8, an interrupt is triggered in t
 
 These two examples show how to stream JPEG images from the AI-Deck to a socket connected via Wi-FI.
 1. `wifi_jpeg_streamer/` example streams normal grayscale images
-2. `wifi_jpeg_streamer_inv_col/` example streams grayscale images with inverted colors, using the `inv_kernel` from Hands-on session 2.
+2. `wifi_jpeg_streamer_inv_col/` example streams grayscale images with inverted colors, using the `inverting()` from Hands-on session 2.
 
 The acquisition and JPEG encoding of the acquired image hapens on the GAP8 SoC, while the Wi-Fi transmission is managed by the NINA Wi-Fi module.
 The code consists of two pars:
