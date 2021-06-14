@@ -1,3 +1,15 @@
+#-----------------------------------------------------------------------------#
+# File: test.c
+# Original code: Bitcraze                                                     #
+# Link: https://github.com/bitcraze/AIdeck_examples/tree/master/GAP8/         #
+#              /test_functionalities/wifi_jpeg_streamer                       #                                 
+# Contributors:                                                               #
+#          Bitcraze <contact@bitcraze.io>                                     #
+#          Lorenzo Lamberti <lorenzo.lamberti@unibo.it>                       #
+# Date:    10.06.2021                                                         #
+#-----------------------------------------------------------------------------# 
+
+
 #include "bsp/camera/himax.h"
 #include "bsp/camera/mt9v034.h"
 #include "bsp/transport/nina_w10.h"
@@ -144,7 +156,7 @@ static void led_handle(void *arg)
   pi_task_push_delayed_us(pi_task_callback(&led_task, led_handle, NULL), 500000);
 }
 
-int main()
+int main_task(void) {
 {
   printf("Entering main controller...\n");
 
@@ -214,4 +226,12 @@ int main()
   }
 
   return 0;
+}
+
+
+/* Program Entry. */
+int main(void) {
+
+	printf("\n\n\t *** PMSIS Kickoff trasmission ***\n\n");
+	return pmsis_kickoff((int *) main_task);
 }
