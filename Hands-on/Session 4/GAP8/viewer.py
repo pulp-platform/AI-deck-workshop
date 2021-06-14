@@ -1,3 +1,13 @@
+#----------------------------------------------------------------------------- #
+# File: viewer.py                                                              #
+# Original code: Bitcraze                                                      #
+# Link: https://github.com/bitcraze/AIdeck_examples/tree/master/NINA/viewer.py #                                 
+# Contributors:                                                                #
+#          Bitcraze <contact@bitcraze.io>                                      #
+#          Lorenzo Lamberti <lorenzo.lamberti@unibo.it>                        #
+# Date:    10.06.2021                                                          #
+#------------------------------------------------------------------------------# 
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
@@ -8,7 +18,7 @@
 #   ||  ||    /_____/_/\__/\___/_/   \__,_/ /___/\___/
 #
 #  Copyright (C) 2020 Bitcraze AB
-#
+# 
 #  AI-deck demo
 #
 #  This program is free software; you can redistribute it and/or
