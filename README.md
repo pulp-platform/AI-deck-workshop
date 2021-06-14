@@ -41,8 +41,6 @@ The code consists of two pars:
 - `wifi_jpeg_streamer/test.c`: the GAP8 C code (camera acquisition of a raw image, jpeg encoding, forward of the jpeg image to NINA)
 - `viewer.py`: the Python visualizer receives the images streamed from NINA to the Laptop. By default, it connects to the IP of the AI-deck when use in AccessPoint mode.
 
-An additional example is provided, where image color is inverted before transmitting 
-
 Tested on GAP_SDK version 3.8.1.
 
 Commands:
