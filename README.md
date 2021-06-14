@@ -6,12 +6,21 @@
 
 ## 1. Basic programming
 
-Hanna: please describe here this hands-on session
+This hands-on shows you how to connect to your AI-deck and how to run your first program on it. It also introduces basic API functions for executing code on multiple cores.
+The example will print hello world from all cores. You find more infos about the code in the README inside the helloworld example.
 
 
 ## 2. Image manipulation
 
-Hanna: please describe here this hands-on session
+This example takes an image, applies a kernel and writes the image over your JTAG cable (using openOCD file semi-hosting) to your computer.
+You can choose between two kernels:
+
+- demosaicking 
+- inverting
+
+for both you can choose to either execute the kernel sequentially on the fabric controller or parallelized on the cluster.
+It is meant to introduce the camera, file transmission via JTAG and parallization of image processing kernels.
+You find more infos about the code in the README inside the simple_kernel_example.
 
 
 ## 3. Firmware integration
