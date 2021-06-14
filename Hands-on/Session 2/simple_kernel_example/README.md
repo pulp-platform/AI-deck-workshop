@@ -19,7 +19,7 @@ First computing a grayscale image from a RGB camera took around 2.33s (all measu
 - `output[idx] = (red + green + blue)/3;` We only need one division! This gives us 199.2ms
 - we also have 8 cores on the cluster! Paralellizing it brought us down to 33.3ms.
 
-With those 3 steps we could already improve by a factor of 70. There are still other possible improvements, like moving the check `grayscale == 1` out of the for-loop for avoiding wrong branch predictions or loop-unrolling. 
+With those 3 steps we could already improve by a factor of 70. There are still other possible improvements, like moving the check `grayscale == 1` out of the for-loop for avoiding wrong branch predictions or loop-unrolling. You could also vectorize the code as we are only operating on bytes. Or improve the accuracy, as the factors 0.33 for all colors are actual not resulting in the most accurate grayscale representation. There is a lot of room for you to play and get familiar with the example :)
 
 One last hint: be careful with printf - this is a very long and complicated function and should never be inside your performance measurement.
 
