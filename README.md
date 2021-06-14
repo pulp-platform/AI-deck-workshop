@@ -32,27 +32,35 @@ Whenever the counter value is received from GAP8, an interrupt is triggered in t
 
 ## 4. Video streaming 
 
-This example streams JPEG images from the AI-Deck to a socket connected via Wi-FI.
+These two examples show how to stream JPEG images from the AI-Deck to a socket connected via Wi-FI.
+1. `wifi_jpeg_streamer/` example streams normal grayscale images
+2. `wifi_jpeg_streamer_inv_col/` example streams grayscale images with inverted colors, using the `inv_kernel` from Hands-on session 2.
+
 The acquisition and JPEG encoding of the acquired image hapens on the GAP8 SoC, while the Wi-Fi transmission is managed by the NINA Wi-Fi module.
 The code consists of two pars:
 - `wifi_jpeg_streamer/test.c`: the GAP8 C code (camera acquisition of a raw image, jpeg encoding, forward of the jpeg image to NINA)
 - `viewer.py`: the Python visualizer receives the images streamed from NINA to the Laptop. By default, it connects to the IP of the AI-deck when use in AccessPoint mode.
+
+An additional example is provided, where image color is inverted before transmitting 
 
 Tested on GAP_SDK version 3.8.1.
 
 Commands:
 Flash GAP8 memory with our code:
 ```
+cd GAP8/wifi_jpeg_streamer/ 
 make clean all
 make image flash io=host
 ```
 Alternatively, you can run code on GAP8 from L2 memory (volatile)
 ```
+cd GAP8/wifi_jpeg_streamer/ 
 make clean all run io=host
 ```
 
 Visualize images:
 ```
+cd GAP8/
 python visualizer.py
 ```
 
