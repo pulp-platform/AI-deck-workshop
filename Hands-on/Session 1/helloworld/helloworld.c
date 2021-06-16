@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------#
+# File: helloworld.c                                                          #
+# Original code: GreenWaves-Technologies                                      #
+# Link: https://github.com/GreenWaves-Technologies/gap_sdk/tree/master/       #
+#              examples/pmsis/helloworld                                      #
+# Contributors:                                                               #
+#          GreenWaves-Technologies                                            #
+# Date:    12.04.2021                                                         #
+#-----------------------------------------------------------------------------# 
 /* PMSIS includes */
 #include "pmsis.h"
 

@@ -1,3 +1,13 @@
+#-----------------------------------------------------------------------------#
+# File: img_proc.c                                                            #
+# Original code: Bitcraze                                                     #
+# Link: https://github.com/bitcraze/AIdeck_examples/tree/master/GAP8/         #
+#             image_processing_examples/simple_kernel_example                 #
+# Contributors:                                                               #
+#          Bitcraze <contact@bitcraze.io>                                     #
+#          Hanna Müller <hanmuell@iis.ee.ethz.ch>                             #
+# Date:    12.04.2021                                                         #
+#-----------------------------------------------------------------------------# 
 #include "img_proc.h"
 
 void demosaicking(char *input, char* output, int width, int height, const int grayscale)

@@ -1,3 +1,14 @@
+#-----------------------------------------------------------------------------#
+# File: img_proc.h                                                            #
+# Original code: Bitcraze                                                     #
+# Link: https://github.com/bitcraze/AIdeck_examples/tree/master/GAP8/         #
+#             image_processing_examples/simple_kernel_example                 #
+# Contributors:                                                               #
+#          Bitcraze <contact@bitcraze.io>                                     #
+#          Hanna Müller <hanmuell@iis.ee.ethz.ch>                             #
+# Date:    12.04.2021                                                         #
+#-----------------------------------------------------------------------------# 
+
 #ifndef __IMG_PROC_H__
 #define __IMG_PROC_H__
 

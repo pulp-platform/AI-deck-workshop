@@ -1,3 +1,14 @@
+#-----------------------------------------------------------------------------#
+# File: Makefile                                                              #
+# Original code: Bitcraze                                                     #
+# Link: https://github.com/bitcraze/AIdeck_examples/tree/master/GAP8/         #
+#             image_processing_examples/simple_kernel_example                 #
+# Contributors:                                                               #
+#          Bitcraze <contact@bitcraze.io>                                     #
+#          Hanna Müller <hanmuell@iis.ee.ethz.ch>                             #
+# Date:    12.04.2021                                                         #
+#-----------------------------------------------------------------------------# 
+
 APP = test
 APP_SRCS += test.c $(GAP_LIB_PATH)/img_io/ImgIO.c img_proc.c
 APP_INC  += . $(GAP_LIB_PATH)/include
