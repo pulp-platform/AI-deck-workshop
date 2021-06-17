@@ -7,7 +7,7 @@
  *
  * Authors: Germain Haugou, ETH (germain.haugou@iis.ee.ethz.ch)
  * First update: bitcraze
- * Second update (parallelization, adding inerting kernel): Hanna Müller, ETH (hanmuell@iis.ee.ethz.ch)  
+ * Second update (parallelization, adding inverting kernel): Hanna Müller, ETH (hanmuell@iis.ee.ethz.ch)  
  */
 
 // This example shows how to strean the capture of a camera image using
