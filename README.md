@@ -1,7 +1,32 @@
 
 # AI-deck-workshop
 
+Copyright (C) 2021 ETH Zürich, University of Bologna. All rights reserved.
+
+__Authors:__
+_Lorenzo Lamberti (University of Bologna), 
+Hanna Müller (ETH Zürich), 
+Vlad Niculescu (ETH Zürich), 
+Dr. Manuele Rusci (University of Bologna / Greenwaves Technology), 
+Dr. Daniele Palossi (IDSIA Lugano / ETH Zürich)_
+
 <img style="float: right;" src="imgs/overview.png" width="100%">
+
+
+This workshop on the AI-Deck was held on April 16th 2021. More info about the event [at this page.](https://www.bitcraze.io/about/events/adws12021/)
+
+__Video Recording:__ The workshop's recording is available on the offical [Bitcraze's YouTube Channel at this link](https://youtu.be/o9asYPHxEB4)
+
+The workshop is composed of two main parts:
+
+1. An overview on the PULP (Parallel Ultra Low Power) paradigm and the PULP architecture: slides available at [`Overview/`](./Overview/)
+2. Four hands-on sessions with PULP coding examples: code and slides available at [`Hands-on/`](./Hands-on/). 
+
+
+
+# Hands-on sessions 
+
+A brief description of the hands-on sessions is provided in the  following sections. 
 
 
 ## 1. Basic programming
