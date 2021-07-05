@@ -84,7 +84,7 @@ make clean all run io=host
 Visualize images:
 ```
 cd GAP8/
-python visualizer.py
+python viewer.py
 ```
 
 
